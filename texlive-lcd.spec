@@ -1,3 +1,9 @@
+# revision 16549
+# category Package
+# catalog-ctan /macros/latex/contrib/lcd
+# catalog-date 2006-11-14 20:05:17 +0100
+# catalog-license lppl
+# catalog-version 0.3
 Name:		texlive-lcd
 Version:	0.3
 Release:	1
@@ -44,6 +50,7 @@ Assumes 8-bit input in its internal verbatim-style environment.
 #- source
 %doc %{_texmfdistdir}/source/latex/lcd/lcd.dtx
 %doc %{_texmfdistdir}/source/latex/lcd/lcd.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,3 +61,5 @@ Assumes 8-bit input in its internal verbatim-style environment.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
