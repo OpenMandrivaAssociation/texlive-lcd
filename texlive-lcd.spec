@@ -50,3 +50,17 @@ Assumes 8-bit input in its internal verbatim-style environment.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.3-2
++ Revision: 753209
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.3-1
++ Revision: 718836
+- texlive-lcd
+- texlive-lcd
+- texlive-lcd
+- texlive-lcd
+
