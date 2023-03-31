@@ -1,6 +1,6 @@
 Name:		texlive-lcd
 Version:	16549
-Release:	1
+Release:	2
 Summary:	Alphanumerical LCD-style displays
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/lcd
