@@ -3,7 +3,7 @@ Version:	16549
 Release:	2
 Summary:	Alphanumerical LCD-style displays
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/lcd
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/lcd
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.doc.r%{version}.tar.xz
