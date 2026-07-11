@@ -1,47 +1,23 @@
-Name:		texlive-lcd
-Version:	16549
-Release:	2
+%global tl_name lcd
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.3
+Release:	%{tl_revision}.1
 Summary:	Alphanumerical LCD-style displays
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/lcd
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.source.r%{version}.tar.xz
+License:	lppl1
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lcd.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A LaTeX package that will display text as on an LCD display.
-Assumes 8-bit input in its internal verbatim-style environment.
+A LaTeX package that will display text as on an (early) LCD display (the
+output is very visibly pixellated). Assumes 8-bit input in its internal
+verbatim-style environment.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/lcd/lcd.sty
-%doc %{_texmfdistdir}/doc/latex/lcd/00readme
-%doc %{_texmfdistdir}/doc/latex/lcd/example.pdf
-%doc %{_texmfdistdir}/doc/latex/lcd/example.tex
-#- source
-%doc %{_texmfdistdir}/source/latex/lcd/lcd.dtx
-%doc %{_texmfdistdir}/source/latex/lcd/lcd.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
